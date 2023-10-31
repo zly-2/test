@@ -1,0 +1,106 @@
+testcase/bin/pascal:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00030000 <start>:
+   30000:       e9 00 00 00 00          jmp    30005 <main>
+
+00030005 <main>:
+   30005:       55                      push   %ebp
+   30006:       89 e5                   mov    %esp,%ebp
+   30008:       83 ec 10                sub    $0x10,%esp
+   3000b:       c7 45 fc 00 00 00 00    movl   $0x0,-0x4(%ebp)
+   30012:       eb 6c                   jmp    30080 <main+0x7b>
+   30014:       8b 45 fc                mov    -0x4(%ebp),%eax
+   30017:       c1 e0 07                shl    $0x7,%eax
+   3001a:       05 80 30 03 00          add    $0x33080,%eax
+   3001f:       c7 00 01 00 00 00       movl   $0x1,(%eax)
+   30025:       8b 45 fc                mov    -0x4(%ebp),%eax
+   30028:       c1 e0 07                shl    $0x7,%eax
+   3002b:       05 80 30 03 00          add    $0x33080,%eax
+   30030:       8b 10                   mov    (%eax),%edx
+   30032:       8b 4d fc                mov    -0x4(%ebp),%ecx
+   30035:       89 c8                   mov    %ecx,%eax
+   30037:       c1 e0 05                shl    $0x5,%eax
+   3003a:       29 c8                   sub    %ecx,%eax
+   3003c:       c1 e0 02                shl    $0x2,%eax
+   3003f:       05 80 30 03 00          add    $0x33080,%eax
+   30044:       89 10                   mov    %edx,(%eax)
+   30046:       8b 55 fc                mov    -0x4(%ebp),%edx
+   30049:       89 d0                   mov    %edx,%eax
+   3004b:       c1 e0 05                shl    $0x5,%eax
+   3004e:       29 d0                   sub    %edx,%eax
+   30050:       c1 e0 02                shl    $0x2,%eax
+   30053:       05 80 30 03 00          add    $0x33080,%eax
+   30058:       8b 00                   mov    (%eax),%eax
+   3005a:       83 f8 01                cmp    $0x1,%eax
+   3005d:       74 06                   je     30065 <main+0x60>
+   3005f:       b8 01 00 00 00          mov    $0x1,%eax
+   30064:       82                      nemu_trap 
+   30065:       8b 45 fc                mov    -0x4(%ebp),%eax
+   30068:       c1 e0 07                shl    $0x7,%eax
+   3006b:       05 80 30 03 00          add    $0x33080,%eax
+   30070:       8b 00                   mov    (%eax),%eax
+   30072:       83 f8 01                cmp    $0x1,%eax
+   30075:       74 06                   je     3007d <main+0x78>
+   30077:       b8 01 00 00 00          mov    $0x1,%eax
+   3007c:       82                      nemu_trap 
+   3007d:       ff 45 fc                incl   -0x4(%ebp)
+   30080:       83 7d fc 1e             cmpl   $0x1e,-0x4(%ebp)
+   30084:       7e 8e                   jle    30014 <main+0xf>
+   30086:       c7 45 fc 02 00 00 00    movl   $0x2,-0x4(%ebp)
+   3008d:       eb 65                   jmp    300f4 <main+0xef>
+   3008f:       c7 45 f8 01 00 00 00    movl   $0x1,-0x8(%ebp)
+   30096:       eb 51                   jmp    300e9 <main+0xe4>
+   30098:       8b 45 fc                mov    -0x4(%ebp),%eax
+   3009b:       8d 50 ff                lea    -0x1(%eax),%edx
+   3009e:       8b 45 f8                mov    -0x8(%ebp),%eax
+   300a1:       8d 48 ff                lea    -0x1(%eax),%ecx
+   300a4:       89 d0                   mov    %edx,%eax
+   300a6:       c1 e0 05                shl    $0x5,%eax
+   300a9:       29 d0                   sub    %edx,%eax
+   300ab:       01 c8                   add    %ecx,%eax
+   300ad:       8b 14 85 80 30 03 00    mov    0x33080(,%eax,4),%edx
+   300b4:       8b 45 fc                mov    -0x4(%ebp),%eax
+   300b7:       8d 48 ff                lea    -0x1(%eax),%ecx
+   300ba:       89 c8                   mov    %ecx,%eax
+   300bc:       c1 e0 05                shl    $0x5,%eax
+   300bf:       29 c8                   sub    %ecx,%eax
+   300c1:       8b 4d f8                mov    -0x8(%ebp),%ecx
+   300c4:       01 c8                   add    %ecx,%eax
+   300c6:       8b 04 85 80 30 03 00    mov    0x33080(,%eax,4),%eax
+   300cd:       8d 0c 02                lea    (%edx,%eax,1),%ecx
+   300d0:       8b 55 fc                mov    -0x4(%ebp),%edx
+   300d3:       89 d0                   mov    %edx,%eax
+   300d5:       c1 e0 05                shl    $0x5,%eax
+   300d8:       29 d0                   sub    %edx,%eax
+   300da:       8b 55 f8                mov    -0x8(%ebp),%edx
+   300dd:       01 d0                   add    %edx,%eax
+   300df:       89 0c 85 80 30 03 00    mov    %ecx,0x33080(,%eax,4)
+   300e6:       ff 45 f8                incl   -0x8(%ebp)
+   300e9:       8b 45 f8                mov    -0x8(%ebp),%eax
+   300ec:       3b 45 fc                cmp    -0x4(%ebp),%eax
+   300ef:       7c a7                   jl     30098 <main+0x93>
+   300f1:       ff 45 fc                incl   -0x4(%ebp)
+   300f4:       83 7d fc 1e             cmpl   $0x1e,-0x4(%ebp)
+   300f8:       7e 95                   jle    3008f <main+0x8a>
+   300fa:       c7 45 f8 00 00 00 00    movl   $0x0,-0x8(%ebp)
+   30101:       eb 26                   jmp    30129 <main+0x124>
+   30103:       8b 45 f8                mov    -0x8(%ebp),%eax
+   30106:       05 a2 03 00 00          add    $0x3a2,%eax
+   3010b:       8b 14 85 80 30 03 00    mov    0x33080(,%eax,4),%edx
+   30112:       8b 45 f8                mov    -0x8(%ebp),%eax
+   30115:       8b 04 85 00 30 03 00    mov    0x33000(,%eax,4),%eax
+   3011c:       39 c2                   cmp    %eax,%edx
+   3011e:       74 06                   je     30126 <main+0x121>
+   30120:       b8 01 00 00 00          mov    $0x1,%eax
+   30125:       82                      nemu_trap 
+   30126:       ff 45 f8                incl   -0x8(%ebp)
+   30129:       83 7d f8 1e             cmpl   $0x1e,-0x8(%ebp)
+   3012d:       7e d4                   jle    30103 <main+0xfe>
+   3012f:       b8 00 00 00 00          mov    $0x0,%eax
+   30134:       82                      nemu_trap 
+   30135:       b8 00 00 00 00          mov    $0x0,%eax
+   3013a:       c9                      leave  
+   3013b:       c3                      ret    
